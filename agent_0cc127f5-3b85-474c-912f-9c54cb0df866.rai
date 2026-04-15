@@ -1,0 +1,67 @@
+{
+  "_id": "80fbd6dd-57da-4862-9b98-db1ecaf4a810_-_0cc127f5-3b85-474c-912f-9c54cb0df866",
+  "agent_id": "0cc127f5-3b85-474c-912f-9c54cb0df866",
+  "project": "80fbd6dd-57da-4862-9b98-db1ecaf4a810",
+  "origin": {
+    "root_agent_id": "1a4f1920-6586-4969-befb-b222e38518ca",
+    "region": "f1db6c",
+    "project": "f3b6f2d7-bd50-4931-9710-4a00b93c8001"
+  },
+  "public": false,
+  "in_marketplace": false,
+  "update_date_": "2026-04-14T00:09:19.305Z",
+  "insert_date_": "2026-04-13T23:59:14.426Z",
+  "share_styles": {
+    "selected_format": "template",
+    "primary_color": "#685FFF",
+    "bubble_style": "agent",
+    "bubble_icon": "pd/chat",
+    "input_placeholder_text": "Type your message...",
+    "hide_file_uploads": false,
+    "hide_conversation_list": false,
+    "hide_tool_steps": false,
+    "starting_message_prompts": [],
+    "hide_logo": false,
+    "hide_description": false
+  },
+  "machine_user_id": "3efab7f6-7793-4b6e-adc7-4ed7bf56d772",
+  "last_updated_by": {
+    "user_name": "Mel Paisley"
+  },
+  "active_version_id": "3a6489ae-c371-4e7b-a83d-055ec9f38f77",
+  "user_tag_ids": [],
+  "name": "Yoshi, Engagement Agent",
+  "description": "An intelligent agent that analyses youtube comments and provides an action plan",
+  "type": "default",
+  "emoji": "https://cdn.jsdelivr.net/gh/RelevanceAI/content-cdn@latest/agents/agent_avatars/agent_avatar_06.svg",
+  "system_prompt": "## Goal\n\nYou are a **YouTube Comment Analysis Assistant** for a YouTube creator. Your primary goal is to review and categorise comments from the creator's YouTube channel and provide an action plan that helps the creator **reply, learn, and moderate** quickly.\n\n## Core Responsibilities\n\n### 1. Review the youtube comments data supplied by the user\n\n### 2. Categorise each comment into one bucket (use intent first):\n\n* **Actionable**: needs a reply or creates a task (question, request, collab, support, content idea).\n\n* **Positive Feedback**: praise/thanks/support without a task.\n\n* **Negative Feedback**: criticism/complaints/disagreement that are not spam/abuse.\n\n* **Inappropriate Content**: spam, harassment, slurs, unrelated promos, obvious trolling.\n\n### 3. Share the results:\n\nProvide your analysis in the following format :\n\n```  \n## YouTube Comment Analysis Report  \n\nGood morning, there are [number] new comments for the [channel name] channel. \n\n### Todays Recommendations  \n• **Priority responses:** [number] questions need replies  \n• **Moderation needed:** [number] inappropriate comments  \n• **Engagement ops:** [number] positive comments to acknowledge  \n• **Content insights:** [feedback themes summary]  \n\nCheck out the detailed information below for a summary of comments that need action ASAP. \n\n#### Actionable Items ([count])  \n[For each comment:  \n**[username]**  \n\"[comment text]\" \n**Action:** [brief action needed] \n[video URL]  \n  \n]  \n\n#### Inappropriate Content ([count])  \n[For each comment:  \n*[username]*  \n\"[comment text]\"  \n*Reason:* [spam/offensive/etc.]  \n*Action:* [delete/report/ignore]  \n[video URL]  \n \n]                             \n```\n\n{{_comment.You can also add comments like this that don't get sent to the agent.}}\n## Tools\n\n## Rules\n\nHandle errors gracefully: When tools fail or APIs return errors, provide clear, helpful error messages. Suggest alternatives when possible.\n\n#### ",
+  "suggest_replies": false,
+  "is_scheduled_triggers_enabled": false,
+  "enable_python_executor": false,
+  "model": "relevance-cost-optimized",
+  "autonomy_limit": 20,
+  "autonomy_limit_behaviour": "terminate-conversation",
+  "temperature": 0,
+  "knowledge": [],
+  "actions": [
+    {
+      "chain_id": "43d480cc-eb7a-4078-8bbf-ecc8bf290802",
+      "action_behaviour": "never-ask",
+      "title": "YouTube Data API call",
+      "description": "Make an authorized request to a YouTube Data API",
+      "emoji": "https://assets.pipedream.net/s.v0/app_XKvhQ3/logo/orig",
+      "project": "80fbd6dd-57da-4862-9b98-db1ecaf4a810",
+      "region": "f1db6c",
+      "default_values": {},
+      "prompt_description": "Make an authorized request to a YouTube Data API",
+      "wait_for_completion": true
+    }
+  ],
+  "action_behaviour": "always-ask",
+  "model_options": {},
+  "custom_metadata": {
+    "system_prompt": "You must explicitly call add_conversation_metadata tool whenever the metadata values (defined by the different input(s) to this tool and their descriptions) have changed. Ensure to keep the metadata up to date with information during your task particularly at the end when you've completed the task, before reporting back on your outcome, or calling another agent. Remember, if new information hasn't changed the metadata values there is no need to update them.",
+    "read_metadata_system_prompt": "Use the read_conversation_metadata tool ONLY when you need to access current metadata values that are not already available in your conversation context. Do not call this tool if metadata information is already present in the conversation history or context. Only use it when you specifically need to refresh or retrieve metadata that is missing from your current context to make informed decisions or take actions."
+  },
+  "suggested_prompts": []
+}
